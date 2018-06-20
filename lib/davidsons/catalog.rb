@@ -1,0 +1,64 @@
+module Davidsons
+  class Catalog < Base
+
+    CATALOG_FILENAME = "davidsons_inventory.csv".freeze
+
+    def initialize(options = {})
+      requires!(options, :username, :password)
+
+      @options = options
+    end
+
+    def self.all(chunk_size = 15, options = {}, &block)
+      requires!(options, :username, :password)
+      new(options).all(chunk_size, &block)
+    end
+
+    def all(chunk_size, &block)
+      tempfile = get_file(CATALOG_FILENAME)
+
+      SmarterCSV.process(tempfile.open, {
+        chunk_size: chunk_size,
+        convert_values_to_numeric: false,
+        force_utf8: true,
+        key_mapping: {
+          "item_#":         :item_identifier,
+          item_description: :name,
+          upc_code:         :upc,
+          manufacturer:     :brand,
+          msp:              :msrp,
+          dealer_price:     :price,
+          gun_type:         :category,
+        }
+      }) do |chunk|
+        chunk.each do |item|
+          item.except!(:retail_price, :capacity, :sale_price, :sale_ends)
+
+          item[:msrp].tr!('$', '')
+          item[:price].tr!('$', '')
+          item[:upc].tr!('#', '')
+
+          item[:features] = map_features(item)
+
+          item.except!(:finish, :barrel_length, :overall_length, :model_series, :sights, :stock)
+        end
+
+        yield(chunk)
+      end
+    end
+
+    protected
+
+    def map_features(item)
+      {
+        finish:         item[:finish],
+        barrel_length:  item[:barrel_length],
+        overall_length: item[:overall_length],
+        model_series:   item[:model_series],
+        sights:         item[:sights],
+        stock:          item[:stock]
+      }
+    end
+
+  end
+end
