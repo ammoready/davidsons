@@ -22,19 +22,29 @@ module Davidsons
         convert_values_to_numeric: false,
         force_utf8: true,
         key_mapping: {
-          item_number:  :item_identifier,
-          quantity_nc:  :quantity_east,
-          quantity_az:  :quantity_west
+          item_number:  :item_identifier
         }
       }) do |chunk|
         chunk.each do |item|
           item.except!(:upc_code)
 
-          item[:quantity] = item[:quantity_east].to_i + item[:quantity_west].to_i
+          item[:quantity]   = item[:quantity_nc].to_i + item[:quantity_az].to_i
+          item[:locations]  = map_location_quantities(item)
+
+          item.except!(:quantity_nc, :quantity_az)
         end
 
         yield(chunk)
       end
+    end
+
+    protected
+
+    def map_location_quantities(item)
+      {
+        nc: item[:quantity_nc],
+        az: item[:quantity_az]
+      }
     end
 
   end
