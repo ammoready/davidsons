@@ -5,6 +5,7 @@ require 'net/ftp'
 require 'davidsons/base'
 require 'davidsons/user'
 require 'davidsons/catalog'
+require 'davidsons/inventory'
 
 module Davidsons
 
