@@ -29,6 +29,8 @@ module Davidsons
       }) do |chunk|
         chunk.each do |item|
           item.except!(:upc_code)
+
+          item[:quantity] = item[:quantity_east].to_i + item[:quantity_west].to_i
         end
 
         yield(chunk)
