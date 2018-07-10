@@ -32,9 +32,9 @@ module Davidsons
           item[:locations]  = map_location_quantities(item)
 
           item.except!(:quantity_nc, :quantity_az)
-        end
 
-        yield(chunk)
+          yield(item)
+        end
       end
     end
 
