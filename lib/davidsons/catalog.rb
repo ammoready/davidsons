@@ -41,9 +41,9 @@ module Davidsons
           item[:features] = map_features(item)
 
           item.except!(:finish, :barrel_length, :overall_length, :model_series, :sights, :stock)
-        end
 
-        yield(chunk)
+          yield(item)
+        end
       end
     end
 
