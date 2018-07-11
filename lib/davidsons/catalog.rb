@@ -1,7 +1,8 @@
 module Davidsons
   class Catalog < Base
 
-    CATALOG_FILENAME = "davidsons_inventory.csv".freeze
+    CATALOG_FILENAME  = "davidsons_inventory.csv".freeze
+    CHUNK_SIZE        = 100
 
     def initialize(options = {})
       requires!(options, :username, :password)
@@ -9,16 +10,16 @@ module Davidsons
       @options = options
     end
 
-    def self.all(chunk_size = 15, options = {}, &block)
+    def self.all(options = {}, &block)
       requires!(options, :username, :password)
-      new(options).all(chunk_size, &block)
+      new(options).all(&block)
     end
 
-    def all(chunk_size, &block)
+    def all(&block)
       tempfile = get_file(CATALOG_FILENAME)
 
       SmarterCSV.process(tempfile.open, {
-        chunk_size: chunk_size,
+        chunk_size: CHUNK_SIZE,
         convert_values_to_numeric: false,
         force_utf8: true,
         key_mapping: {

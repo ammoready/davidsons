@@ -1,7 +1,8 @@
 module Davidsons
   class Inventory < Base
 
-    INVENTORY_FILENAME = "davidsons_quantity.csv"
+    INVENTORY_FILENAME  = "davidsons_quantity.csv"
+    CHUNK_SIZE          = 100
 
     def initialize(options = {})
       requires!(options, :username, :password)
@@ -9,16 +10,16 @@ module Davidsons
       @options = options
     end
 
-    def self.quantity(chunk_size = 15, options = {}, &block)
+    def self.quantity(options = {}, &block)
       requires!(options, :username, :password)
-      new(options).quantity(chunk_size, &block)
+      new(options).quantity(&block)
     end
 
-    def quantity(chunk_size, &block)
+    def quantity(&block)
       tempfile = get_file(INVENTORY_FILENAME)
 
       SmarterCSV.process(tempfile.open, {
-        chunk_size: chunk_size,
+        chunk_size: CHUNK_SIZE,
         convert_values_to_numeric: false,
         force_utf8: true,
         key_mapping: {
