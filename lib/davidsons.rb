@@ -6,6 +6,7 @@ require 'davidsons/base'
 require 'davidsons/user'
 require 'davidsons/catalog'
 require 'davidsons/inventory'
+require 'davidsons/order'
 
 module Davidsons
 
