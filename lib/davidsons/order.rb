@@ -38,8 +38,8 @@ module Davidsons
         ':ConsumerName'         => partner_name,
         ':ConsumerPhone'        => partner_phone,
         ':ReferenceNumber'      => purchase_order_number,
-        ':Items'                => items,
-        ':UseExpeditedShipping' => false
+        ':Items'                => self.format_items(items),
+        ':UseExpeditedShipping' => 'false'
       })
 
       order_info = request.body[:create_order_response][:create_order_result]
@@ -64,6 +64,21 @@ module Davidsons
       else
         { success: false, error_code: tracking_info[:response_code], error_message: tracking_info[:response_text] }
       end
+    end
+
+    protected
+
+    def format_items(items)
+      formatted_items = Array.new
+
+      items.each do |item|
+        formatted_items.push({
+          ':ItemNumber' => item[:item_identifier],
+          ':Quantity'   => item[:quantity]
+        })
+      end
+
+      { ':Item' => formatted_items }
     end
 
   end
