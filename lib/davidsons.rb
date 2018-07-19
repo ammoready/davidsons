@@ -27,12 +27,14 @@ module Davidsons
   class Configuration
     attr_accessor :debug
     attr_accessor :ftp_host
+    attr_accessor :proxy_url
 
     alias debug? debug
 
     def initialize
-      @debug ||= false
-      @ftp_host ||= "ftp.davidsonsinventory.com"
+      @debug      ||= false
+      @ftp_host   ||= "ftp.davidsonsinventory.com"
+      @proxy_url  ||= "http://172.31.69.148:8888"
     end
   end
 

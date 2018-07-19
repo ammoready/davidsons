@@ -20,7 +20,7 @@ module Davidsons
       #settings[:namespace]                = @options[:test] ? TEST_URL : API_URL
       settings[:env_namespace]            = 'soap'
       settings[:convert_request_keys_to]  = :camelcase
-      settings[:proxy]                    = 'http://172.31.69.148:8888'
+      settings[:proxy]                    = Davidsons.config.proxy_url
 
       if @options[:test]
         settings[:log]              = true
