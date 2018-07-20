@@ -19,8 +19,7 @@ module Davidsons
       #settings[:endpoint]                 = @options[:test] ? TEST_URL : API_URL
       #settings[:namespace]                = @options[:test] ? TEST_URL : API_URL
       settings[:env_namespace]            = 'soap'
-      settings[:convert_request_keys_to]  = :camelcase
-      settings[:proxy]                    = Davidsons.config.proxy_url
+      #settings[:proxy]                    = Davidsons.config.proxy_url
 
       if @options[:test]
         settings[:log]              = true
@@ -32,7 +31,7 @@ module Davidsons
     end
 
     def create_order(items, partner_name, partner_phone, purchase_order_number, details = {})
-      request = @client.call(:create_order, message: {
+      request = @client.call(:create_order, attributes: { xmlns: Davidsons.config.xmlns }, message: { ':request': {
         ':Token'                => @options[:token],
         ':DealerCustomerNumber' => @options[:dealer_number],
         ':ConsumerName'         => partner_name,
@@ -40,7 +39,7 @@ module Davidsons
         ':ReferenceNumber'      => purchase_order_number,
         ':Items'                => self.format_items(items),
         ':UseExpeditedShipping' => 'false'
-      })
+      }})
 
       order_info = request.body[:create_order_response][:create_order_result]
 
@@ -52,10 +51,10 @@ module Davidsons
     end
 
     def get_order_tracking(order_number)
-      request = @client.call(:get_order_tracking, message: {
+      request = @client.call(:get_order_tracking, attributes: { xmlns: Davidsons.config.xmlns }, message: { ':request': {
         ':Token'    => @options[:token],
         ':OrderNo'  => order_number 
-      })
+      }})
 
       tracking_info = request.body[:get_order_tracking_response][:get_order_tracking_result]
 
@@ -78,8 +77,10 @@ module Davidsons
         })
       end
 
-      { ':Item' => formatted_items }
+      { ':ItemRequest' => formatted_items }
     end
+
+    # Invalid Token
 
   end
 end
