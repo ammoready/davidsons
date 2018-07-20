@@ -28,6 +28,7 @@ module Davidsons
     attr_accessor :debug
     attr_accessor :ftp_host
     attr_accessor :proxy_url
+    attr_accessor :xmlns
 
     alias debug? debug
 
@@ -35,6 +36,7 @@ module Davidsons
       @debug      ||= false
       @ftp_host   ||= "ftp.davidsonsinventory.com"
       @proxy_url  ||= "http://172.31.69.148:8888"
+      @xmlns      ||= "https://dealernetwork.davidsonsinc.com/"
     end
   end
 
