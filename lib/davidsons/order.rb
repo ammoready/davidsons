@@ -19,7 +19,7 @@ module Davidsons
       #settings[:endpoint]                 = @options[:test] ? TEST_URL : API_URL
       #settings[:namespace]                = @options[:test] ? TEST_URL : API_URL
       settings[:env_namespace]            = 'soap'
-      #settings[:proxy]                    = Davidsons.config.proxy_url
+      settings[:proxy]                    = Davidsons.config.proxy_url
 
       if @options[:test]
         settings[:log]              = true
