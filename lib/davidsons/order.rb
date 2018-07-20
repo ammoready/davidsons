@@ -32,13 +32,13 @@ module Davidsons
 
     def create_order(items, partner_name, partner_phone, purchase_order_number, details = {})
       request = @client.call(:create_order, attributes: { xmlns: Davidsons.config.xmlns }, message: { ':request': {
-        ':Token'                => @options[:token],
-        ':DealerCustomerNumber' => @options[:dealer_number],
-        ':ConsumerName'         => partner_name,
-        ':ConsumerPhone'        => partner_phone,
-        ':ReferenceNumber'      => purchase_order_number,
-        ':Items'                => self.format_items(items),
-        ':UseExpeditedShipping' => 'false'
+        'Token'                => @options[:token],
+        'DealerCustomerNumber' => @options[:dealer_number],
+        'ConsumerName'         => partner_name,
+        'ConsumerPhone'        => partner_phone,
+        'ReferenceNumber'      => purchase_order_number,
+        'Items'                => self.format_items(items),
+        'UseExpeditedShipping' => 'false'
       }})
 
       order_info = request.body[:create_order_response][:create_order_result]
@@ -52,8 +52,8 @@ module Davidsons
 
     def get_order_tracking(order_number)
       request = @client.call(:get_order_tracking, attributes: { xmlns: Davidsons.config.xmlns }, message: { ':request': {
-        ':Token'    => @options[:token],
-        ':OrderNo'  => order_number 
+        'Token'    => @options[:token],
+        'OrderNo'  => order_number
       }})
 
       tracking_info = request.body[:get_order_tracking_response][:get_order_tracking_result]
@@ -72,15 +72,18 @@ module Davidsons
 
       items.each do |item|
         formatted_items.push({
-          ':ItemNumber' => item[:item_identifier],
-          ':Quantity'   => item[:quantity]
+          'ItemNumber' => item[:item_identifier],
+          'Quantity'   => item[:quantity]
         })
       end
 
-      { ':ItemRequest' => formatted_items }
+      { 'ItemRequest' => formatted_items }
     end
 
-    # Invalid Token
+    # NOTE-david
+    # Errors:
+    #   Invalid Token
+    #   Customer is not setup in dealer network.
 
   end
 end
