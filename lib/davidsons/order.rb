@@ -43,7 +43,7 @@ module Davidsons
 
       order_info = request.body[:create_order_response][:create_order_result]
 
-      if order_info = request.body[:response_code] == "0"
+      if order_info[:response_code] == "0"
         { success: true, order_number: order_info[:order_number] }
       else
         { success: false, error_code: order_info[:response_code], error_message: order_info[:response_text] }
@@ -84,6 +84,7 @@ module Davidsons
     # Errors:
     #   Invalid Token
     #   Customer is not setup in dealer network.
+    #   Insufficient quantity for item 798681529582
 
   end
 end
