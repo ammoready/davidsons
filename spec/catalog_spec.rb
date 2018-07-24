@@ -5,7 +5,7 @@ RSpec.describe Davidsons::Catalog do
   let(:credentials) {{ username: '', password: ''  }}
 
   before do
-    tempfile = Tempfile.new
+    tempfile = Tempfile.new('catalog_tempfile')
     FileUtils.copy_file(FixtureHelper.get_fixture('catalog.csv').path, tempfile.path)
     allow_any_instance_of(Davidsons::Catalog).to receive(:get_file) { tempfile }
   end
