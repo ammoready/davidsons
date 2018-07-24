@@ -20,7 +20,7 @@ RSpec.describe Davidsons::Catalog do
         case count
         when 1
           expect(item[:item_identifier]).to eq("1B222269")
-          expect(item[:quantity]).to        eq("18")
+          expect(item[:quantity]).to        eq(18)
           expect(item[:brand]).to           eq("Aguila")
         when 2
           expect(item[:item_identifier]).to eq("1B222328")

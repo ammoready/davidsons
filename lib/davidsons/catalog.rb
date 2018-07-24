@@ -38,6 +38,7 @@ module Davidsons
           item[:msrp].tr!('$', '')
           item[:price].tr!('$', '')
           item[:upc].tr!('#', '')
+          item[:quantity] = item[:quantity].to_i
 
           item[:features] = map_features(item)
 
