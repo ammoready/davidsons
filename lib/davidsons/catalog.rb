@@ -35,6 +35,7 @@ module Davidsons
         chunk.each do |item|
           item.except!(:retail_price, :capacity, :sale_price, :sale_ends)
 
+          item[:mfg_number] = item[:item_identifier]
           item[:msrp].tr!('$', '')
           item[:price].tr!('$', '')
           item[:upc].tr!('#', '')
