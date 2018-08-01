@@ -10,6 +10,11 @@ module Davidsons
       @options = options
     end
 
+    def self.all(options = {}, &block)
+      requires!(options, :username, :password)
+      new(options).quantity(&block)
+    end
+
     def self.quantity(options = {}, &block)
       requires!(options, :username, :password)
       new(options).quantity(&block)
