@@ -15,6 +15,11 @@ module Davidsons
       new(options).quantity(&block)
     end
 
+    def self.get_quantity_file(options = {})
+      requires!(options, :username, :password)
+      new(options).get_quantity_file
+    end
+
     def self.quantity(options = {}, &block)
       requires!(options, :username, :password)
       new(options).quantity(&block)
@@ -42,6 +47,35 @@ module Davidsons
           yield(item)
         end
       end
+    end
+
+    def get_quantity_file
+      inventory_tempfile  = get_file(INVENTORY_FILENAME)
+      tempfile            = Tempfile.new
+
+      SmarterCSV.process(inventory_tempfile.open, {
+        chunk_size: CHUNK_SIZE,
+        convert_values_to_numeric: false,
+        force_utf8: true,
+        key_mapping: {
+          item_number:  :item_identifier
+        }
+      }) do |chunk|
+        chunk.each do |item|
+          item.except!(:upc_code)
+
+          item[:quantity]   = item[:quantity_nc].to_i + item[:quantity_az].to_i
+
+          item.except!(:quantity_nc, :quantity_az)
+
+          tempfile.puts("#{item[:item_number]},#{item[:quantity]}")
+        end
+      end
+
+      inventory_tempfile.unlink
+      tempfile.close
+
+      tempfile.path
     end
 
     protected
