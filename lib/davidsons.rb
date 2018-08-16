@@ -1,6 +1,7 @@
 require "davidsons/version"
 
 require 'net/ftp'
+require 'smarter_csv'
 
 require 'davidsons/base'
 require 'davidsons/user'
@@ -25,15 +26,15 @@ module Davidsons
   end
 
   class Configuration
-    attr_accessor :debug
+    attr_accessor :debug_mode
     attr_accessor :ftp_host
     attr_accessor :proxy_url
     attr_accessor :xmlns
 
-    alias debug? debug
+    alias debug_mode? debug_mode
 
     def initialize
-      @debug      ||= false
+      @debug_mode ||= false
       @ftp_host   ||= "ftp.davidsonsinventory.com"
       @proxy_url  ||= "http://172.31.69.148:8888"
       @xmlns      ||= "https://dealernetwork.davidsonsinc.com/"

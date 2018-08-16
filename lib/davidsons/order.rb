@@ -4,8 +4,8 @@ require 'pp'
 module Davidsons
   class Order < Base
 
-    TEST_URL  = 'https://dealernetwork.davidsonsinc.com/testapi/orderservice.asmx?WSDL'
-    API_URL   = 'https://dealernetwork.davidsonsinc.com/api/orderservice.asmx?WSDL'
+    TEST_URL = 'https://dealernetwork.davidsonsinc.com/testapi/orderservice.asmx?WSDL'
+    API_URL  = 'https://dealernetwork.davidsonsinc.com/api/orderservice.asmx?WSDL'
 
     attr :client
 
@@ -14,10 +14,11 @@ module Davidsons
 
       @options = options
 
-      settings = Hash.new
-      settings[:wsdl]                     = @options[:test] ? TEST_URL : API_URL
-      settings[:env_namespace]            = 'soap'
-      settings[:proxy]                    = Davidsons.config.proxy_url
+      settings = {
+        wsdl:          @options[:test] ? TEST_URL : API_URL,
+        env_namespace: 'soap',
+        proxy:         Davidsons.config.proxy_url
+      }
 
       if @options[:test]
         settings[:log]              = true
@@ -50,8 +51,8 @@ module Davidsons
 
     def get_order_tracking(order_number)
       request = @client.call(:get_order_tracking, attributes: { xmlns: Davidsons.config.xmlns }, message: { ':request': {
-        'Token'    => @options[:token],
-        'OrderNo'  => order_number
+        'Token'   => @options[:token],
+        'OrderNo' => order_number
       }})
 
       tracking_info = request.body[:get_order_tracking_response][:get_order_tracking_result]

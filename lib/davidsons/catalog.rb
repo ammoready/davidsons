@@ -1,8 +1,8 @@
 module Davidsons
   class Catalog < Base
 
-    CATALOG_FILENAME  = "davidsons_inventory.csv".freeze
-    CHUNK_SIZE        = 100
+    CATALOG_FILENAME = "davidsons_inventory.csv".freeze
+    CHUNK_SIZE       = 100
 
     def initialize(options = {})
       requires!(options, :username, :password)

@@ -64,7 +64,7 @@ module Davidsons
         chunk.each do |item|
           item.except!(:upc_code)
 
-          item[:quantity]   = item[:quantity_nc].to_i + item[:quantity_az].to_i
+          item[:quantity] = item[:quantity_nc].to_i + item[:quantity_az].to_i
 
           item.except!(:quantity_nc, :quantity_az)
 

@@ -6,6 +6,7 @@ module Davidsons
 
       Net::FTP.open(Davidsons.config.ftp_host, options[:username], options[:password]) do |ftp|
         ftp.passive = true
+        ftp.debug_mode = Davidsons.config.debug_mode?
 
         yield ftp
       end
