@@ -10,8 +10,12 @@ module Davidsons
 
         yield ftp
       end
-    rescue Net::FTPPermError
-      raise Davidsons::NotAuthenticated
+    rescue Net::FTPPermError => e
+      if e.to_s.start_with?('530')
+        raise Davidsons::NotAuthenticated
+      else
+        raise e
+      end
     end
 
     protected

@@ -35,15 +35,13 @@ module Davidsons
         chunk.each do |item|
           item.except!(:retail_price, :capacity, :sale_price, :sale_ends)
 
-          item[:mfg_number] = item[:item_identifier]
           item[:msrp].tr!('$', '')
           item[:price].tr!('$', '')
           item[:upc].tr!('#', '')
+
+          item[:mfg_number] = item[:item_identifier]
           item[:quantity] = item[:quantity].to_i
-
           item[:features] = map_features(item)
-
-          item.except!(:finish, :barrel_length, :overall_length, :model_series, :sights, :stock)
 
           yield(item)
         end
@@ -54,12 +52,12 @@ module Davidsons
 
     def map_features(item)
       {
-        finish:         item[:finish],
-        barrel_length:  item[:barrel_length],
-        overall_length: item[:overall_length],
-        model_series:   item[:model_series],
-        sights:         item[:sights],
-        stock:          item[:stock]
+        finish:         item.delete(:finish),
+        barrel_length:  item.delete(:barrel_length),
+        overall_length: item.delete(:overall_length),
+        model_series:   item.delete(:model_series),
+        sights:         item.delete(:sights),
+        stock:          item.delete(:stock),
       }
     end
 

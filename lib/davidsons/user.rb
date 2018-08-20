@@ -10,7 +10,9 @@ module Davidsons
     def authenticated?
       connect(@options) { |ftp| ftp.pwd }
       true
-    rescue Davidsons::NotAuthenticated
+    rescue Davidsons::NotAuthenticated => e
+      puts "Davidsons::User#authenticated? => false"
+      puts e
       false
     end
 
