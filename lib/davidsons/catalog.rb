@@ -18,6 +18,8 @@ module Davidsons
     def all(&block)
       tempfile = get_file(CATALOG_FILENAME)
 
+      # TODO: account for Sale Price and MSP (minimum price)
+
       SmarterCSV.process(tempfile.open, {
         chunk_size: CHUNK_SIZE,
         convert_values_to_numeric: false,
@@ -27,7 +29,7 @@ module Davidsons
           item_description: :name,
           upc_code:         :upc,
           manufacturer:     :brand,
-          msp:              :msrp,
+          retail_price:     :msrp,
           dealer_price:     :price,
           gun_type:         :category,
         }

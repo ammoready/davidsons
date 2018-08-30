@@ -1,8 +1,8 @@
 module Davidsons
   class Inventory < Base
 
-    INVENTORY_FILENAME  = "davidsons_quantity.csv"
-    CHUNK_SIZE          = 100
+    INVENTORY_FILENAME = "davidsons_quantity.csv"
+    CHUNK_SIZE         = 100
 
     def initialize(options = {})
       requires!(options, :username, :password)
@@ -32,9 +32,7 @@ module Davidsons
         chunk_size: CHUNK_SIZE,
         convert_values_to_numeric: false,
         force_utf8: true,
-        key_mapping: {
-          item_number:  :item_identifier
-        }
+        key_mapping: { item_number: :item_identifier }
       }) do |chunk|
         chunk.each do |item|
           item.except!(:upc_code)
