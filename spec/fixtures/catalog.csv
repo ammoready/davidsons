@@ -1,47 +1,47 @@
 Item #, Item Description, MSP, Retail Price, Dealer Price, Sale Price, Sale Ends, Quantity, UPC Code, Manufacturer, Gun Type, Model Series, Caliber, Action, Capacity, Finish,Stock, Sights, Barrel Length, Overall Length, Features
-1B222269,AGU 22LR 40GR LSP SUBSONIC 50R,$3.49,$4.79,$3.49,,,18,#640420001098#,Aguila,,,22LR,,,,,,,,
-1B222328,AGU 22LR 40GR CPSP SUPEXT 50RD,$2.39,$3.49,$2.39,,,60,#640420001012#,Aguila,,,22LR,,,,,,,,
-1B222332,AGU 22LR 40GR LSP SUPEXT STD,$2.29,$3.39,$2.29,,,99,#640420001050#,Aguila,,,22LR,,,,,,,,
-1B222400,AGU 22M 40GR SJSP SIL EAG 50RD,$9.99,$13.99,$9.99,,,66,#965472154869#,Aguila,,,22M,,,,,,,,
-1B222401,AGU 22M 40GR SJSP SIL EAG 50RD,$9.99,$13.99,$9.99,,,99,#640420001470#,Aguila,,,22M,,,,,,,,
-1B222514,AGU 22LR 40GR LSP TARGET COMP,$4.09,$5.99,$4.09,,,99,#640420001579#,Aguila,,,22LR,,,,,,,,
-1B222518,AGU 22LR 40GR LSP RIFLE MATCH,$3.99,$5.99,$3.99,,,99,#640420001517#,Aguila,,,22LR,,,,,,,,
-1B222516,AGU 22LR 40GR LSP PISTOL MATCH,$4.09,$5.99,$4.09,,,50,#640420001531#,Aguila,,,22LR,,,,,,,,
-1E802110,AGU 380 95GR FMJ,$11.49,$19.49,$11.49,,,0,#640420003122#,Aguila,,,380,,,,,,,,
-1E382521,AGU 38SP 130GR FMJ,$15.49,$20.69,$15.49,,,56,#640420003146#,Aguila,,,38SP,,,,,,,,
-1E097704,AGU 9MM 115GR FMJ,$8.99,$14.99,$8.99,,,0,#640420003085#,Aguila,,,9MM,,,,,,,,
-1E092110,AGU 9MM 124GR FMJ,$8.99,$14.99,$8.99,,,0,#640420003061#,Aguila,,,9MM,,,,,,,,
-1E402110,AGU 40SW 180GR FMJFN,$13.99,$19.59,$13.99,,,40,#640420003092#,Aguila,,,40SW,,,,,,,,
-1E572823,AGU 357 158GR SJSP,$17.89,$26.29,$17.89,,,0,#640420003160#,Aguila,,,357,,,,,,,,
-1E452110,AGU 45AP 230GR FMJ,$15.79,$22.29,$15.79,,,0,#640420003078#,Aguila,,,45AP,,,,,,,,
-1E223110,AGU 223 55GR FMJ,$15.59,$23.59,$15.59,,,13,#640420003054#,Aguila,,,223,,,,,,,,
-1E556110,AGU 5.56 62GR FMJBT,$15.99,$24.39,$15.99,,,0,#640420003245#,Aguila,,,5.56 NATO,,,,,,,,
-1E762110,AGU 7.62 150GR FMJBT,$12.49,$16.69,$12.49,,,0,#640420003252#,Aguila,,,7.62 NATO,,,,,,,,
-1CHB1288,AGU 12G BUCK DUPLEX 4-1 MINI,$16.49,$19.79,$16.49,,,0,#640420002538#,Aguila,,,12 Gauge,,,,,,,,
-1C128974,AGU 12G SLUG MINISHELL,$16.79,$18.99,$16.79,,,0,#640420002514#,Aguila,,,12 Gauge,,,,,,,,
-1CHB1287,AGU 12G 7.5 MINISHELL,$10.49,$13.19,$10.49,,,0,#640420002521#,Aguila,,,12 Gauge,,,,,,,,
-ATIGFX45GI,ATA FX45 1911GI 45AP 4.25B 8RD,$364.99,$459.95,$364.99,$354.99,6/30/2018,0,#813393012754#,American Tactical Imports,Pistol: Semi-Auto,FX45|1911,45AP,Single Action,8+1,Matte Black,Mahogany Grips,Military Style Front & Rear Sights,4.25,7.84,
-ATIGFX45MIL,ATA FX45 1911MIL 45AP 5B 8RD,$364.99,$459.95,$364.99,$354.99,6/30/2018,0,#813393012761#,American Tactical Imports,Pistol: Semi-Auto,FX45|1911,45AP,Single Action,8+1,Matte Black,Mahogany Grips,Military Style Front & Rear Sights,5,8.46,
-ATIGFX45TIB,ATA FX45 1911TITN 45AP 3.2B 7R,$374.99,$469.95,$374.99,$364.99,6/30/2018,0,#813393012785#,American Tactical Imports,Pistol: Semi-Auto,FX45|1911,45AP,Single Action,7+1,Blue,Mahogany Grips,Front: Dovetail Rear: Low Profile,3.18 Bull Barrel,6.93,
-ATIGFXH45,ATA FX45 HBRD 1911 45AP 5B 8RD,$454.99,$599.95,$454.99,,,0,#813393018497#,American Tactical Imports,Pistol: Semi-Auto,FX45|1911,45AP,Single Action,8+1,Matte Black,Polymer Frame W/ Finger Grooves,Front: Hi-Viz Rear: Serrated Black Fixed,5,8.46,Polymer Frame W/ 2 Metal Inserts
-GERG1911TGT,ATA GSG 1911 TGT 22LR 5B TB 10,$269.99,$339.95,$269.99,,,0,#813393017070#,American Tactical Imports,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Molded Walnut Target Style Grips,Low Profile Adjustable,5,8.5,Threaded Barrel
-GERG2210M1911,ATA GSG 1911 22LR 5B WOOD 10RD,$239.99,$299.95,$239.99,,,35,#813393011504#,American Tactical Imports,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Wood Grips,Fixed Sights,5,8.5,Threaded Barrel
-GERG2210M1911G,ATA GSG 1911 22LR 5B WOOD 10RD,$239.99,$299.95,$239.99,,,0,#813393018435#,American Tactical Imports,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,OD Green,Wood Grips,Fixed Sights,5,8.5,Threaded Barrel
-GERG2210M1911T,ATA GSG 1911 22LR 5B WOOD 10RD,$239.99,$299.95,$239.99,,,5,#813393018442#,American Tactical Imports,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,FDE,Wood Grips,Fixed Sights,5,8.5,Threaded Barrel
-GERG2210M1911S,ATA GSG 1911 22LR 5 2 TONE 10R,$239.99,$299.95,$239.99,,,0,#813393013911#,American Tactical Imports,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,2 Tone,Black Grips,Fixed Sights,5,8.5,Threaded Barrel
-GERG2210M1911CA,ATA GSG 1911 22LR 5B WD 10R CA,$244.99,$309.95,$244.99,,,99,#813393013959#,American Tactical Imports,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Wood Grips,Fixed Sights,5,8.5,
-GERG1911ADOP,ATA GSG 1911AO PST 22LR 5B 10R,$244.99,$309.95,$244.99,,,3,#813393012600#,American Tactical Imports,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Black Plastic Grips,Fixed Sights,5 without Faux Suppressor,12.5 with Faux Suppressor and 8.5 without,Threaded Barrel Metric M9x.75
-GERG2210GSG9CA,ATA GSG-922 22LR 3.4B 10RD CA,$304.99,$384.95,$304.99,,,7,#813393016806#,American Tactical Imports,Pistol: Semi-Auto,GSG-922,22LR,Single Action,10+1,Blue,Black Grips,Click Adjustable Target Sight,3.4,7,Compatible with 1911 Parts
-GERG2210TFF,ATA GSG FIREFLY 22P 4.9 TB 10B,$194.99,$269.95,$194.99,,,6,#813393019685#,American Tactical Imports,Pistol: Semi-Auto,Firefly,22LR,Double Action,10+1,Blue,Black Grips,Adjustable Rear Sight,4.9,8.2,Polymer Frame/ Integrated Accessory Rail
-GERG2210TFFT,ATA GSG FIREFLY 22P 4.9 TB 10T,$194.99,$269.95,$194.99,,,0,#813393019692#,American Tactical Imports,Pistol: Semi-Auto,Firefly,22LR,Double Action,10+1,Tan,Black Grips,Adjustable Rear Sight,4.9,8.2,Tan Polymer Frame/ Integrated Accessory Rail
-GERG2210FF,ATA GSG FIREFLY 22PST 4B FS 10,$194.99,$269.95,$194.99,,,13,#813393019425#,American Tactical Imports,Pistol: Semi-Auto,Firefly,22LR,Double Action,10+1,Blue,Black Grips,Adjustable Rear Sight,3.9,7.2,Polymer Frame/ Integrated Accessory Rail
-GERG2210FFT,ATA GSG FIREFLY 22PST 10RD TAN,$194.99,$269.95,$194.99,,,22,#813393019555#,American Tactical Imports,Pistol: Semi-Auto,Firefly,22LR,Double Action,10+1,Tan,Black Grips,Adjustable Rear Sight,3.9,7.2,Tan Polymer Frame/ Integrated Accessory Rail
-GERG2210FFG,ATA GSG FIREFLY 22PST 10RD GRN,$194.99,$269.95,$194.99,,,10,#813393019562#,American Tactical Imports,Pistol: Semi-Auto,Firefly,22LR,Double Action,10+1,Green,Black Grips,Adjustable Rear Sight,3.9,7.2,Green Polymer Frame/ Integrated Accessory Rail
-ATIG15MSP9KM5,ATA MIL-SPORT PST 9MM 5.5B 31R,$629.99,$869.95,$629.99,,,0,#813393018978#,American Tactical Imports,Pistol: Semi-Auto,Mil-Sport,9MM,Semi-Automatic,31+1,Black,,No Sights,5.5,22.5,Uses GLK Mags/ 7 Free Float Aluminum Key Mod Rail
-ATIGMS15P7556,ATA MIL-SPORT PST 223 7.5B 30R,$479.99,$659.95,$479.99,,,0,#813393018527#,American Tactical Imports,Pistol: Semi-Auto,Mil-Sport,223,Semi-Automatic,30+1,Black,,No Sights,7.5,,Special 7 Free Floating Aluminum Key Mod Rail
-ATIGOMXP556,ATA OMNI MAXX PST 223 7B 30R,$374.99,$469.95,$374.99,,,0,#813393018084#,American Tactical Imports,Pistol: Semi-Auto,Omni,223,Semi-Automatic,30+1,Black,7 Buffer Tube,No Sights,7.5,23,Mil-Spec Lower Parts Kit/ 7 Free Float KeyMod Rail
-ATIGOMX556P4,ATA OMNI MAXX HYB P4 5.56 7.5B,$319.99,$399.95,$319.99,,,A*,#819644020295#,American Tactical Imports,Pistol: Semi-Auto,Omni,5.56 NATO|223,Semi-Automatic,30+1,Black,7 Buffer Tube,No Sights,7.5 Black Phosphate Coated Barrel / 1-7 Twist,23,Beveled Mag Well/
-ATIGOMXP300,ATA OMNI MAXX PST 300BLK B 30R,$374.99,$469.95,$374.99,,,0,#813393018091#,American Tactical Imports,Pistol: Semi-Auto,Omni,300 AAC Blackout,Semi-Automatic,30+1,Black,7 Buffer Tube,No Sights,8.5,24,Mil-Spec Lower Parts Kit/ 7 Free Float Keymod Rail
-GERGMP409X,ATA GSG MP40P PST 9MM 10B 25R,$479.99,$649.95,$479.99,,,45,#853267007851#,American Tactical Imports,Pistol: Semi-Auto,GSG MP40P,9MM,Semi-Automatic,25+1,Black,,FT: Hooded Post RR: Adjustable Blade,9.96,24.5,All Metal Magazine
-ATIG15MS9KM16,ATA MIL-SPORT RFL 9MM B 31R,$629.99,$899.95,$629.99,,,0,#813393018961#,American Tactical Imports,Rifle: Semi-Auto,Mil-Sport,9MM,Semi-Automatic,31+1,Black,6 Position Rogers Super-Stoc With Pistol Grip,No Sights,16 Nitride Coated Barrel,,Uses GLK Mags/ 10 Free Float Aluminum Key Mod Rail
-ATIGOMX556P3,ATA OMNI MAXX HYB P3 5.56 16B,$339.99,$449.95,$339.99,,,0,#819644020189#,American Tactical Imports,Rifle: Semi-Auto,Omni,5.56 NATO|223,Semi-Automatic,30+1,Black,6 Position Stock with Pistol Grip,No Sights,16 M4 Nitride Coated Barrel/ 1-7 Twist,31.25 to 34.875,Beveled Mag Well
+A00001,Smuger A00001,$3.49,$4.79,$3.49,,,20,#640000000001#,Smuger,,,22LR,,,,,,,,
+A00002,Smuger A00002,$2.39,$3.49,$2.39,,,25,#640000000002#,Smuger,,,22LR,,,,,,,,
+A00003,Smuger A00003,$2.29,$3.39,$2.29,,,5,#640000000003#,Smuger,,,22LR,,,,,,,,
+A00004,Smuger A00004,$9.99,$13.99,$9.99,,,0,#640000000004#,Smuger,,,22M,,,,,,,,
+A00005,Smuger A00005,$9.99,$13.99,$9.99,,,20,#640000000005#,Smuger,,,22M,,,,,,,,
+A00006,Smuger A00006,$4.09,$5.99,$4.09,,,25,#640000000006#,Smuger,,,22LR,,,,,,,,
+A00007,Smuger A00007,$3.99,$5.99,$3.99,,,5,#640000000007#,Smuger,,,22LR,,,,,,,,
+A00008,Smuger A00008,$4.09,$5.99,$4.09,,,0,#640000000008#,Smuger,,,22LR,,,,,,,,
+A00009,Smuger A00009,$11.49,$19.49,$11.49,,,20,#640000000009#,Smuger,,,380,,,,,,,,
+A00010,Smuger A00010,$15.49,$20.69,$15.49,,,25,#640000000010#,Smuger,,,38SP,,,,,,,,
+A00011,Smuger A00011,$8.99,$14.99,$8.99,,,5,#640000000011#,Smuger,,,9MM,,,,,,,,
+A00012,Smuger A00012,$8.99,$14.99,$8.99,,,0,#640000000012#,Smuger,,,9MM,,,,,,,,
+A00013,Smuger A00013,$13.99,$19.59,$13.99,,,20,#640000000013#,Smuger,,,40SW,,,,,,,,
+A00014,Smuger A00014,$17.89,$26.29,$17.89,,,25,#640000000014#,Smuger,,,357,,,,,,,,
+A00015,Smuger A00015,$15.79,$22.29,$15.79,,,5,#640000000015#,Smuger,,,45AP,,,,,,,,
+A00016,Smuger A00016,$15.59,$23.59,$15.59,,,0,#640000000016#,Smuger,,,223,,,,,,,,
+A00017,Smuger A00017,$15.99,$24.39,$15.99,,,20,#640000000017#,Smuger,,,5.56 NATO,,,,,,,,
+A00018,Smuger A00018,$12.49,$16.69,$12.49,,,25,#640000000018#,Smuger,,,7.62 NATO,,,,,,,,
+A00019,Smuger A00019,$16.49,$19.79,$16.49,,,5,#640000000019#,Smuger,,,12 Gauge,,,,,,,,
+A00020,Smuger A00020,$16.79,$18.99,$16.79,,,0,#640000000020#,Smuger,,,12 Gauge,,,,,,,,
+A00021,Smuger A00021,$10.49,$13.19,$10.49,,,20,#640000000021#,Smuger,,,12 Gauge,,,,,,,,
+A00022,American Stuff A00022,$300.99,$459.95,$364.99,$351.99,6/30/2018,25,#640000000022#,American Stuff,Pistol: Semi-Auto,F45,45AP,Single Action,8+1,Matte Black,Mahogany Grips,Military Style Front & Rear Sights,4.25,7.84,
+A00023,American Stuff A00023,$364.99,$459.95,$364.99,$352.99,6/30/2018,5,#640000000023#,American Stuff,Pistol: Semi-Auto,F46,45AP,Single Action,8+1,Matte Black,Mahogany Grips,Military Style Front & Rear Sights,5,8.46,
+A00024,American Stuff A00024,$374.99,$469.95,$374.99,$353.99,6/30/2018,0,#640000000024#,American Stuff,Pistol: Semi-Auto,F47,45AP,Single Action,7+1,Blue,Mahogany Grips,Front: Dovetail Rear: Low Profile,3.18 Bull Barrel,6.93,
+A00025,American Stuff A00025,$454.99,$599.95,$454.99,,,20,#640000000025#,American Stuff,Pistol: Semi-Auto,F48,45AP,Single Action,8+1,Matte Black,Polymer Frame W/ Finger Grooves,Front: Hi-Viz Rear: Serrated Black Fixed,5,8.46,
+A00026,American Stuff A00026,$269.99,$339.95,$269.99,,,25,#640000000026#,American Stuff,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Molded Walnut Target Style Grips,Low Profile Adjustable,5,8.5,
+A00027,American Stuff A00027,$239.99,$299.95,$239.99,,,5,#640000000027#,American Stuff,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Wood Grips,Fixed Sights,5,8.5,
+B00028,American Stuff B00028,$239.99,$299.95,$239.99,,,0,#640000000028#,American Stuff,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,OD Green,Wood Grips,Fixed Sights,5,8.5,
+B00029,American Stuff B00029,$239.99,$299.95,$239.99,,,20,#640000000029#,American Stuff,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,FDE,Wood Grips,Fixed Sights,5,8.5,
+B00030,American Stuff B00030,$239.99,$299.95,$239.99,,,25,#640000000030#,American Stuff,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,2 Tone,Black Grips,Fixed Sights,5,8.5,
+B00031,American Stuff B00031,$244.99,$309.95,$244.99,,,5,#640000000031#,American Stuff,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Wood Grips,Fixed Sights,5,8.5,
+B00032,American Stuff B00032,$244.99,$309.95,$244.99,,,0,#640000000032#,American Stuff,Pistol: Semi-Auto,1911,22LR,Single Action,10+1,Blue,Black Plastic Grips,Fixed Sights,5 without Faux Suppressor,12.5 with Faux Suppressor and 8.5 without,
+B00033,American Stuff B00033,$304.99,$384.95,$304.99,,,20,#640000000033#,American Stuff,Pistol: Semi-Auto,Ladybug,22LR,Single Action,10+1,Blue,Black Grips,Click Adjustable Target Sight,3.4,7,
+B00034,American Stuff B00034,$194.99,$269.95,$194.99,,,25,#640000000034#,American Stuff,Pistol: Semi-Auto,Ladybug,22LR,Double Action,10+1,Blue,Black Grips,Adjustable Rear Sight,4.9,8.2,
+B00035,American Stuff B00035,$194.99,$269.95,$194.99,,,5,#640000000035#,American Stuff,Pistol: Semi-Auto,Ladybug,22LR,Double Action,10+1,Tan,Black Grips,Adjustable Rear Sight,4.9,8.2,
+B00036,American Stuff B00036,$194.99,$269.95,$194.99,,,0,#640000000036#,American Stuff,Pistol: Semi-Auto,Ladybug,22LR,Double Action,10+1,Blue,Black Grips,Adjustable Rear Sight,3.9,7.2,
+B00037,American Stuff B00037,$194.99,$269.95,$194.99,,,20,#640000000037#,American Stuff,Pistol: Semi-Auto,Ladybug,22LR,Double Action,10+1,Tan,Black Grips,Adjustable Rear Sight,3.9,7.2,
+B00038,American Stuff B00038,$194.99,$269.95,$194.99,,,25,#640000000038#,American Stuff,Pistol: Semi-Auto,Ladybug,22LR,Double Action,10+1,Green,Black Grips,Adjustable Rear Sight,3.9,7.2,
+B00039,American Stuff B00039,$629.99,$869.95,$629.99,,,5,#640000000039#,American Stuff,Pistol: Semi-Auto,Sporty,9MM,Semi-Automatic,31+1,Black,,No Sights,5.5,22.5,
+B00040,American Stuff B00040,$479.99,$659.95,$479.99,,,0,#640000000040#,American Stuff,Pistol: Semi-Auto,Sporty,223,Semi-Automatic,30+1,Black,,No Sights,7.5,,
+B00041,American Stuff B00041,$374.99,$469.95,$374.99,,,20,#640000000041#,American Stuff,Pistol: Semi-Auto,Alpha,223,Semi-Automatic,30+1,Black,7 Buffer Tube,No Sights,7.5,23,
+B00042,American Stuff B00042,$319.99,$399.95,$319.99,,,25,#640000000042#,American Stuff,Pistol: Semi-Auto,Alpha,5.56 NATO|223,Semi-Automatic,30+1,Black,7 Buffer Tube,No Sights,7.5 Black Phosphate Coated Barrel / 1-7 Twist,23,
+B00043,American Stuff B00043,$374.99,$469.95,$374.99,,,5,#640000000043#,American Stuff,Pistol: Semi-Auto,Alpha,300 AAC Blackout,Semi-Automatic,30+1,Black,7 Buffer Tube,No Sights,8.5,24,
+B00044,American Stuff B00044,$479.99,$649.95,$479.99,,,0,#640000000044#,American Stuff,Pistol: Semi-Auto,Alpha,9MM,Semi-Automatic,25+1,Black,,FT: Hooded Post RR: Adjustable Blade,9.96,24.5,
+C00045,American Stuff B00045,$590.99,$899.95,$629.99,,,20,#640000000045#,American Stuff,Rifle: Semi-Auto,Alpha,9MM,Semi-Automatic,31+1,Black,6 Position Rogers Super-Stoc With Pistol Grip,No Sights,16 Nitride Coated Barrel,,
+C00046,American Stuff B00046,$290.99,$449.95,$339.99,,,25,#640000000046#,American Stuff,Rifle: Semi-Auto,Alpha,5.56 NATO|223,Semi-Automatic,30+1,Black,6 Position Stock with Pistol Grip,No Sights,16 M4 Nitride Coated Barrel/ 1-7 Twist,31.25 to 34.875,
