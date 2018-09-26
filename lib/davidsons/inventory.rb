@@ -2,7 +2,7 @@ module Davidsons
   class Inventory < Base
 
     INVENTORY_FILENAME = "davidsons_quantity.csv"
-    CHUNK_SIZE         = 100
+    CHUNK_SIZE         = 1000
 
     def initialize(options = {})
       requires!(options, :username, :password)
