@@ -1,7 +1,7 @@
 module Davidsons
   class Catalog < Base
 
-    CATALOG_FILENAME   = 'davidsons_inventory.csv'.freeze
+    WHOLE_CATALOG_FILENAME = 'davidsons_inventory.csv'.freeze
     DEFAULT_SMART_OPTS = {
       chunk_size: 500,
       convert_values_to_numeric: false,
@@ -24,7 +24,6 @@ module Davidsons
     #   * Can be :regular or :minimum
     def initialize(options = {})
       requires!(options, :username, :password)
-
       @options = options
       @options[:pricing_tier] ||= :regular
     end
@@ -35,7 +34,7 @@ module Davidsons
     end
 
     def all(&block)
-      tempfile = get_file(CATALOG_FILENAME)
+      tempfile = get_file(WHOLE_CATALOG_FILENAME)
 
       SmarterCSV.process(tempfile, DEFAULT_SMART_OPTS) do |chunk|
         chunk.each do |item|
