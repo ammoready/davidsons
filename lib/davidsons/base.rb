@@ -47,17 +47,9 @@ module Davidsons
 
     def get_file(filename)
       connect(@options) do |ftp|
-        begin
-          tempfile = Tempfile.new
-
-          ftp.getbinaryfile(filename, tempfile.path)
-
-          tempfile.close
-
-          tempfile
-        ensure
-          ftp.close
-        end
+        tempfile = Tempfile.new
+        ftp.getbinaryfile(filename, tempfile.path)
+        tempfile
       end
     end
 
