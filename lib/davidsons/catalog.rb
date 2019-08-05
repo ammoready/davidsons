@@ -28,13 +28,14 @@ module Davidsons
       @options[:pricing_tier] ||= :regular
     end
 
-    def self.all(options = {}, &block)
+    def self.all(options = {})
       requires!(options, :username, :password)
-      new(options).all(&block)
+      new(options).all
     end
 
-    def all(&block)
+    def all
       tempfile = get_file(WHOLE_CATALOG_FILENAME)
+      items    = []
 
       SmarterCSV.process(tempfile, DEFAULT_SMART_OPTS) do |chunk|
         chunk.each do |item|
@@ -49,11 +50,13 @@ module Davidsons
           item.delete(:sale_ends)
           item.delete(:sale_price)
 
-          yield(item)
+          items << item
         end
       end
 
       tempfile.unlink
+
+      items
     end
 
     protected
