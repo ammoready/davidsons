@@ -12,43 +12,39 @@ RSpec.describe Davidsons::Catalog do
 
   describe '.all' do
     context 'regular pricing tier' do
-      it 'yields items' do
-        count = 0
+      it 'returns array of items' do
+        items = Davidsons::Catalog.all(credentials)
 
-        Davidsons::Catalog.all(credentials) do |item|
-          count += 1
-
-          case count
-          when 1
+        items.each_with_index do |item, index|
+          case index
+          when 0
             expect(item[:item_identifier]).to eq('A00001')
             expect(item[:quantity]).to eq(20)
             expect(item[:brand]).to eq('Smuger')
-          when 2
+          when 1
             expect(item[:item_identifier]).to eq('A00002')
             expect(item[:caliber]).to eq('22LR')
             expect(item[:price]).to eq('2.39')
           end
         end
 
-        expect(count).to eq(46)
+        expect(items.count).to eq(46)
       end
     end
 
     context 'item has sale price' do
-      it 'yields items' do
-        count = 0
+      it 'returns array of items' do
+        items = Davidsons::Catalog.all(credentials)
 
-        Davidsons::Catalog.all(credentials) do |item|
-          count += 1
-
-          case count
-          when 22
+        items.each_with_index do |item, index|
+          case index
+          when 21
             expect(item[:item_identifier]).to eq('A00022')
             expect(item[:price]).to eq('351.99')
-          when 23
+          when 22
             expect(item[:item_identifier]).to eq('A00023')
             expect(item[:price]).to eq('352.99')
-          when 24
+          when 23
             expect(item[:item_identifier]).to eq('A00024')
             expect(item[:price]).to eq('353.99')
           end
@@ -57,29 +53,27 @@ RSpec.describe Davidsons::Catalog do
     end
 
     context 'minimum pricing tier' do
-      it 'yields items' do
-        count = 0
+      it 'returns array of items' do
+        items = Davidsons::Catalog.all(credentials.merge(pricing_tier: :minimum))
 
-        Davidsons::Catalog.all(credentials.merge(pricing_tier: :minimum)) do |item|
-          count += 1
-
-          case count
-          when 22
+        items.each_with_index do |item, index|
+          case index
+          when 21
             expect(item[:item_identifier]).to eq('A00022')
             expect(item[:price]).to eq('300.99')
-          when 23
+          when 22
             expect(item[:item_identifier]).to eq('A00023')
             expect(item[:price]).to eq('352.99')
-          when 45
+          when 44
             expect(item[:item_identifier]).to eq('C00045')
             expect(item[:price]).to eq('590.99')
-          when 46
+          when 45
             expect(item[:item_identifier]).to eq('C00046')
             expect(item[:price]).to eq('290.99')
           end
         end
 
-        expect(count).to eq(46)
+        expect(items.count).to eq(46)
       end
     end
   end
