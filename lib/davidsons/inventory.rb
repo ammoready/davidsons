@@ -50,9 +50,9 @@ module Davidsons
     # @option options [Symbol] :pricing_tier *optional*
     #   * Denotes which price to use
     #   * Can be :regular or :minimum
-    def self.all(options = {}, &block)
+    def self.all(options = {})
       requires!(options, :username, :password)
-      new(options).all(&block)
+      new(options).all
     end
 
     # Iterates over all items in the 'davidsons_quantity.csv' file yielding the item_identifier, upc, quantity and locations.
@@ -60,12 +60,13 @@ module Davidsons
     # @param [Hash] options
     # @option options [Symbol] :username *required*
     # @option options [Symbol] :password *required*
-    def self.quantity(options = {}, &block)
+    def self.quantity(options = {})
       requires!(options, :username, :password)
-      new(options).quantity(&block)
+      new(options).quantity
     end
 
     def all
+      items    = []
       tempfile = get_file(WHOLE_CATALOG_FILENAME)
 
       SmarterCSV.process(tempfile, DEFAULT_WHOLE_CATALOG_SMART_OPTS) do |chunk|
@@ -75,12 +76,15 @@ module Davidsons
           item[:price]    = lowest_price(item)
           item[:quantity] = item[:quantity].to_i
 
-          yield(item)
+          items << item
         end
       end
+
+      items
     end
 
-    def quantity(&block)
+    def quantity
+      items    = []
       tempfile = get_file(QUANTITY_FILENAME)
 
       SmarterCSV.process(tempfile, DEFAULT_QUANTITY_SMART_OPTS) do |chunk|
@@ -88,9 +92,11 @@ module Davidsons
           item[:quantity]  = item[:quantity_nc].to_i + item[:quantity_az].to_i
           item[:locations] = map_location_quantities(item)
 
-          yield(item)
+          items << item
         end
       end
+
+      items
     end
 
     private
