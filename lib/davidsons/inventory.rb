@@ -71,7 +71,7 @@ module Davidsons
 
       SmarterCSV.process(tempfile, DEFAULT_WHOLE_CATALOG_SMART_OPTS) do |chunk|
         chunk.each do |item|
-          item[:upc].tr!('#', '')
+          item[:upc].try(:tr!, '#', '')
 
           item[:price]    = lowest_price(item)
           item[:quantity] = item[:quantity].to_i
