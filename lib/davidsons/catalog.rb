@@ -39,8 +39,8 @@ module Davidsons
 
       SmarterCSV.process(tempfile, DEFAULT_SMART_OPTS) do |chunk|
         chunk.each do |item|
-          item[:msrp].try(:tr!, '$', '')
-          item[:upc].try(:tr!, '#', '')
+          item[:msrp]&.tr!('$', '')
+          item[:upc]&.tr!('#', '')
 
           item[:price]      = lowest_price(item)
           item[:mfg_number] = item[:item_identifier]
