@@ -36,7 +36,7 @@ module Davidsons
     def initialize
       @debug_mode ||= false
       @ftp_host   ||= "ftp.davidsonsinventory.com"
-      @proxy_url  ||= "http://172.31.69.148:8888"
+      @proxy_url  ||= "http://127.0.0.1:8888"
       @xmlns      ||= "https://dealernetwork.davidsonsinc.com/"
     end
   end
