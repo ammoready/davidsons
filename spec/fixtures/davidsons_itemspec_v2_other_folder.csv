@@ -1,0 +1,3 @@
+ItemNo,ItemDesc1,ItemDesc2,UPC,Brand,GunType,DealerPrice,RetailPrice,MinPrice,SalePrice,sale_price,sale_starts,sale_ends,caliber,finish,BarrelLength,OverallLength,ModelSeries,SightClass,SightFront,SightRear,Stock,Capacity
+00001,Duplicate Rifle Listing,,00001,OtherBrand,Rifle,9.99,12.99,8.99,,,,,,,,,,,,,,,
+00004,Widget Cutlery,,00004,Case,Knife,20.00,35.00,15.00,,,,,,,,,,,,,,,
