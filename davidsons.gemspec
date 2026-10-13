@@ -24,6 +24,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency "savon"
 
   spec.add_runtime_dependency "smarter_csv"
+  spec.add_runtime_dependency "net-ftp"
+  spec.add_runtime_dependency "net-sftp"
+  spec.add_runtime_dependency "csv"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
