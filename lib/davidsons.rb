@@ -1,9 +1,11 @@
 require "davidsons/version"
 
 require 'net/ftp'
+require 'net/sftp'
 require 'smarter_csv'
 
 require 'davidsons/base'
+require 'davidsons/v2_feed'
 require 'davidsons/user'
 require 'davidsons/catalog'
 require 'davidsons/inventory'

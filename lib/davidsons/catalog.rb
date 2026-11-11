@@ -22,6 +22,8 @@ module Davidsons
     # @option options [Symbol] :pricing_tier *optional*
     #   * Denotes which price to use
     #   * Can be :regular or :minimum
+    # @option options [String] :order_location *optional*
+    #   * 'FGE' or 'FPE' to read that location's V2 feed (see Davidsons::V2Feed)
     def initialize(options = {})
       requires!(options, :username, :password)
       @options = options
@@ -34,6 +36,8 @@ module Davidsons
     end
 
     def all
+      return v2_feed.catalog if v2?
+
       tempfile = get_file(WHOLE_CATALOG_FILENAME)
       items    = []
 

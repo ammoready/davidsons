@@ -8,7 +8,9 @@ module Davidsons
     end
 
     def authenticated?
-      connect(@options) { |ftp| ftp.pwd }
+      connect(@options) do |conn|
+        self.class.sftp?(@options) ? conn.dir.entries('.') : conn.pwd
+      end
       true
     rescue Davidsons::NotAuthenticated => e
       puts "Davidsons::User#authenticated? => false"

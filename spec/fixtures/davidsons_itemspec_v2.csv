@@ -1,0 +1,4 @@
+ItemNo,ItemDesc1,ItemDesc2,UPC,Brand,GunType,DealerPrice,RetailPrice,MinPrice,SalePrice,sale_price,sale_starts,sale_ends,caliber,finish,BarrelLength,OverallLength,ModelSeries,SightClass,SightFront,SightRear,Stock,Capacity,Category,Subcategory,Groups
+00001,Widget Rifle,,00001,Smuger,Rifle,3.49,4.79,3.29,,,,,.22LR,Blue,16.500,32.000,Classic,Fiber Optic,Blade,Notch,Wood,5,Firearms,Long Guns,Rifles
+00002,Widget Pistol,,00002,Smuger,Pistol,2.39,3.49,0,,,,,9mm,,,,,,,,,,Firearms,Handguns,Pistols
+00003,Widget Shotgun,Deluxe Edition,00003,Acme,Shotgun,300.00,399.99,250.00,,275.00,2026-01-01,2026-01-31,12GA,,,,,,,,,,Firearms,Long Guns,Shotguns

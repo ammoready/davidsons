@@ -66,6 +66,8 @@ module Davidsons
     end
 
     def all
+      return v2_feed.prices if v2?
+
       items    = []
       tempfile = get_file(WHOLE_CATALOG_FILENAME)
 
@@ -84,6 +86,8 @@ module Davidsons
     end
 
     def quantity
+      return v2_feed.quantities if v2?
+
       items    = []
       tempfile = get_file(QUANTITY_FILENAME)
 
