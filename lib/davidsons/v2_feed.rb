@@ -14,11 +14,14 @@ module Davidsons
     ITEMSPEC_FILENAME = 'V2_Itemspec.csv'.freeze
     QUANTITY_FILENAME = 'V2_Qty.csv'.freeze
 
-    # Quantity column for each order location's folder. Both use gQty for now;
-    # Class 3 stock (g3Qty) isn't included yet.
+    # Quantity columns for each order location's folder, in the order Davidsons
+    # wants them checked. The first one above zero is the item's quantity.
+    #   g3Qty - Class 3 items warehouse
+    #   gQty  - North Carolina warehouse
+    #   pQty  - Arizona warehouse
     QUANTITY_COLUMNS = {
-      'FGE' => 'gQty',
-      'FPE' => 'gQty',
+      'FGE' => %w( g3Qty gQty pQty ),
+      'FPE' => %w( g3Qty pQty gQty ),
     }.freeze
 
     # Sales that aren't running have 0 prices and 1900-01-01 dates
@@ -32,7 +35,7 @@ module Davidsons
       @pricing_tier   = pricing_tier
       @fetch          = fetch
       @today          = today
-      @quantity_column = QUANTITY_COLUMNS.fetch(order_location) do
+      @quantity_columns = QUANTITY_COLUMNS.fetch(order_location) do
         raise ArgumentError.new("Unknown Davidsons order location: #{order_location.inspect} (expected one of: #{QUANTITY_COLUMNS.keys.join(', ')})")
       end
     end
@@ -92,7 +95,7 @@ module Davidsons
         {
           item_identifier: value(row, 'SKU'),
           upc:             upc(row),
-          quantity:        value(row, @quantity_column).to_i,
+          quantity:        quantity(row),
           locations: {
             g:  value(row, 'gQty'),
             p:  value(row, 'pQty'),
@@ -115,6 +118,17 @@ module Davidsons
       quantities.each_with_object({}) do |item, map|
         map[item[:item_identifier]] = item[:quantity]
       end
+    end
+
+    # First of the location's columns with stock; blank or zero falls through to
+    # the next, and 0 when none have any.
+    def quantity(row)
+      @quantity_columns.each do |column|
+        quantity = value(row, column).to_i
+        return quantity if quantity > 0
+      end
+
+      0
     end
 
     def value(row, column)

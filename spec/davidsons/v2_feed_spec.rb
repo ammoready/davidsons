@@ -5,6 +5,8 @@ require 'spec_helper'
 #   00004  Case knife - sale 25.99 ended 2026-08-31, MinPrice 0, gQty 20 / pQty 0
 #   171102 Leupold rings - no sale, MinPrice 64.00 < DealerPrice 67.69, gQty 4 / pQty 5
 #   04959  ATM ammo - no sale, no GunType, gQty 0 / pQty 0
+#   02445  V2_Qty only - Class 3 stock, gQty 0 / pQty 0 / g3Qty 5
+#   99999  V2_Qty only, made up - blank gQty and g3Qty, pQty 3
 RSpec.describe 'Davidsons V2 feeds' do
 
   let(:credentials) {{ username: 'usr', password: 'psw', ftp_host: 'ftp.davidsons.com', protocol: 'sftp', port: 22 }}
@@ -84,13 +86,13 @@ RSpec.describe 'Davidsons V2 feeds' do
       expect(items['04959']).to include(category: 'Ammo', subcategory: 'Centerfire', product_type: 'Ammo', caliber: '5.56 NATO')
     end
 
-    it 'uses gQty for FGE' do
-      expect(items.transform_values { |i| i[:quantity] }).to eq('00856' => 0, '00004' => 20, '171102' => 4, '04959' => 0)
+    it 'checks g3Qty, gQty, then pQty for FGE' do
+      expect(items.transform_values { |i| i[:quantity] }).to eq('00856' => 1, '00004' => 20, '171102' => 4, '04959' => 0)
     end
 
-    it 'uses gQty for FPE too' do
+    it 'checks g3Qty, pQty, then gQty for FPE' do
       fpe_items = by_id(Davidsons::Catalog.all(fpe))
-      expect(fpe_items.transform_values { |i| i[:quantity] }).to eq('00856' => 0, '00004' => 20, '171102' => 4, '04959' => 0)
+      expect(fpe_items.transform_values { |i| i[:quantity] }).to eq('00856' => 1, '00004' => 20, '171102' => 5, '04959' => 0)
     end
 
     context 'pricing' do
@@ -128,7 +130,7 @@ RSpec.describe 'Davidsons V2 feeds' do
     it 'returns prices and quantities' do
       items = by_id(Davidsons::Inventory.all(fge))
 
-      expect(items['00856']).to eq(item_identifier: '00856', upc: '847313008565', price: '1515.00', map_price: '1898.00', quantity: 0)
+      expect(items['00856']).to eq(item_identifier: '00856', upc: '847313008565', price: '1515.00', map_price: '1898.00', quantity: 1)
       expect(items['00004']).to eq(item_identifier: '00004', upc: '021205000046', price: '26.99', map_price: '39.99', quantity: 20)
     end
   end
@@ -140,9 +142,19 @@ RSpec.describe 'Davidsons V2 feeds' do
       expect(items['171102']).to eq(
         item_identifier: '171102',
         upc:             '030317011468',
-        quantity:        4,
+        quantity:        5,
         locations:       { g: '4', p: '5', g3: '0' },
       )
+    end
+
+    it 'uses Class 3 stock first' do
+      expect(by_id(Davidsons::Inventory.quantity(fge))['02445'][:quantity]).to eq(5)
+      expect(by_id(Davidsons::Inventory.quantity(fpe))['02445'][:quantity]).to eq(5)
+    end
+
+    it 'falls through blank columns' do
+      expect(by_id(Davidsons::Inventory.quantity(fge))['99999'][:quantity]).to eq(3)
+      expect(by_id(Davidsons::Inventory.quantity(fpe))['99999'][:quantity]).to eq(3)
     end
 
     it 'only reads V2_Qty.csv' do
